@@ -1,0 +1,180 @@
+% template.tex
+% vim:set ft=tex spell:
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[letterpaper,margin=0.25in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{mdwlist}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{tgpagella}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{multicol}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0em}
+
+% indentsection style, used for sections that aren't already in lists
+% that need indentation to the level of all text in the document
+\newenvironment{indentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% opposite of above; bump a section back toward the left margin
+\newenvironment{unindentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{-0.5#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% format two pieces of text, one left aligned and one right aligned
+\newcommand{\headerrow}[2]
+{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+	#1 &
+	#2 \\
+\end{tabular*}}
+
+% make "C++" look pretty when used in text by touching up the plus signs
+\newcommand{\CPP}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
+% and the actual content starts here
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{firstname lastname}}
+
+\url{website url} \textbullet \ \ 
+\url{linkedin url/}
+\ \textbullet \ \url{social media url}
+\ \
+\\
+\ email address \ \textbullet \
+ phone number \ \textbullet \
+\ street address \ \ \textbullet
+\ \ state/country zip code
+\end{center}
+\hrule
+\vspace{-0.4em}
+\subsection*{Work Experience}
+
+\begin{itemize}
+	\parskip=0.1em
+    \item
+    \headerrow
+        {\textbf{first organization}}
+        {\textbf{location}}
+    \headerrow
+        {\emph{position}}
+        {\emph{advisers}}
+        {\emph{startdate -- enddate}}
+    \begin{itemize*}
+        \item here's the first line of what I did.
+        \item here's the second line lol.
+    \end{itemize*}
+	\headerrow
+		{\textbf{second organization}}
+		{\textbf{location}}
+	\headerrow
+		{\emph{position}}
+		{\emph{advisers}}
+		{\emph{startdate-- enddate}}
+	\begin{itemize*}
+		\item lorem ipsum.
+		\item dolor sit amet.
+	\end{itemize*}
+\end{itemize}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Education}
+
+\begin{itemize}
+	\parskip=0.1em
+	\item 
+	\headerrow
+		{\textbf{school, degree}}
+		{\textbf{location}}
+	\headerrow
+		{\emph{startdate -- enddate}}
+
+\end{itemize}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Publications}
+
+\begin{itemize}
+    \parskip=0.1em
+
+    \item first publication
+
+	\item second publication
+
+\end{itemize}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Awards}
+	\headerrow
+        {first award.}
+    ~\\
+        {second award.}
+    ~\\
+\hrule
+\vspace{-0.4em}
+\subsection*{Technical Experience}
+	\headerrow
+		{programming languages.}
+	~\\
+	\headerrow
+		{natural languages.}
+	~\\
+	\headerrow
+		{software.}
+	~\\
+\hrule
+\vspace{-0.4em}
+\pagebreak
+\section*{References}
+\begin{multicols}{3}
+
+    \noindent
+    firstname lastname\\
+    university\\
+    address line 1\\
+	address line 2\\
+	city, state, country, zip code\
+    phone number\\
+    email address\\
+
+\vfill\columnbreak
+
+    \noindent
+    firstname lastname\\
+    university\\
+    address line 1\\
+	address line 2\\
+	city, state, country, zip code\
+    phone number\\
+    email address\\
+
+\vfill\columnbreak
+
+    \noindent
+    firstname lastname\\
+    university\\
+    address line 1\\
+	address line 2\\
+	city, state, country, zip code\
+    phone number\\
+    email address\\
+
+\end{multicols}
+
+\end{document}
